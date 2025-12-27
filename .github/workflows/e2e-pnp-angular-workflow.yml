@@ -20,6 +20,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - uses: ./.github/actions/prepare
+      # Uses default Node.js 22 for better ESM module resolution with yargs@18+ in PnP mode
 
     - name: 'Running the integration test'
       run: |
