@@ -20,9 +20,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - uses: ./.github/actions/prepare
-      with:
-        # TODO: Remove when the issue causing timeouts / crashes in Node.js >= 21 is fixed.
-        node-version: 20
+      # Uses default Node.js 22 for better ESM module resolution with yargs@18+ in PnP mode
 
     - name: 'Running the integration test'
       run: |
