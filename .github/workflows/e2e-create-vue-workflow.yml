@@ -26,7 +26,7 @@ jobs:
       run: |
         source scripts/e2e-setup-ci.sh
 
-        yarn dlx create-vue@3 vue-project --default --typescript --eslint-with-prettier
+        yarn dlx create-vue@3 vue-project --default --typescript --eslint --prettier
         cd vue-project
         yarn
 
