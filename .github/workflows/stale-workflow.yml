@@ -2,7 +2,7 @@ name: 'Close stale issues'
 on:
   schedule:
   - cron: '0 * * * *'
-
+b
 jobs:
   stale:
     runs-on: ubuntu-latest
@@ -24,3 +24,8 @@ jobs:
         only-labels: 'waiting for feedback'
 
         stale-issue-label: 'stale'
+        - name: Close stale issues
+  uses: actions/stale@v9
+  with:
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
+        
