@@ -24,6 +24,9 @@ jobs:
         # TODO: Remove when the issue causing timeouts / crashes in Node.js >= 21 is fixed.
         node-version: 20
 
+    - name: 'Clean yarn cache'
+      run: yarn cache clean
+
     - name: 'Running the integration test'
       run: |
         source scripts/e2e-setup-ci.sh
