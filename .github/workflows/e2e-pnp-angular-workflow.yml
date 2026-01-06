@@ -30,10 +30,13 @@ jobs:
     - name: 'Running the integration test'
       run: |
         source scripts/e2e-setup-ci.sh
-
+        
+        # Clear Yarn cache to prevent corrupted package issues
+        yarn cache clean
+        
         # TODO: Angular should be fixed to detect the correct package manager to install with
         # but for now we need to specify it
-        yarn dlx -p @angular/cli@next ng new berry-angular --interactive=false --package-manager yarn
+        yarn dlx --no-cache -p @angular/cli@next ng new berry-angular --interactive=false --package-manager yarn
 
         cd berry-angular
 
